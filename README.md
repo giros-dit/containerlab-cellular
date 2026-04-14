@@ -36,7 +36,6 @@ In order to run the scenarios, you need to have the following:
 |:-:|---|
 | [![](resources/images/clab-logo.png 'Containerlab')](https://containerlab.dev/) | Tool for orchestrating and managing container-based networking laboratories. |
 | [![](resources/images/open5gs-logo.png 'Open5GS')](https://open5gs.org) | Open source 3GPP Rel-17 compliant implementation of 4G-LTE EPC (Evolved Packet Core) and 5G Core. |
-| [![](resources/images/srsran-logo.png 'srsRAN')](https://www.srslte.com/) | Open source 3GPP compliant 4G-LTE and 5G software suites. |
 | [![](resources/images/ueransim-logo.png 'UERANSIM')](https://github.com/aligungr/UERANSIM) | Open source 3GPP Rel-15 compliant implementation of 5G UE (User Equipment) and gNodeB simulation. |
 
 ## General instructions
@@ -50,19 +49,11 @@ You need to build the _Docker_ images for all containers. Follow these steps (as
 $ cd docker/ueransim/
 $ sudo docker build --no-cache -t giros-dit/ueransim:latest .
 
-# For srsRAN 4G containers:
-$ cd docker/srsran-4g/
-$ sudo docker build --no-cache -t giros-dit/srsran-4g:latest .
-
-# For srsRAN Project containers:
-$ cd docker/srsran-project/
-$ sudo docker build --no-cache -t giros-dit/srsran-project:latest .
-
 # For Open5GS containers:
 $ cd docker/open5gs/
 $ sudo docker build --no-cache -t giros-dit/open5gs:latest .
 
-# For MongoDB container (Open5GS subscriber database):
+# For MongoDB containers (Open5GS subscriber database):
 $ cd docker/mongodb/
 $ sudo docker build --no-cache -t giros-dit/mongodb:latest .
 ```
@@ -75,6 +66,10 @@ In the ![`containerlab`](containerlab) directory there are several subdirectorie
 - A `conf` subdirectory with configuration files for each container that composes the scenario.
 - A `topologies` subdirectory with _Containerlab_ topology definition files for the scenario.
 - A `scripts` subdirectory with shell scripts for deploying/destroying/interacting with the scenario.
+
+#### Available testbed scenarios
+
+- [5G Standalone (SA) with Open5GS and UERANSIM](containerlab/5g-sa_open5gs_ueransim/).
 
 ### 3.- Capturing traffic with _Wireshark_
 

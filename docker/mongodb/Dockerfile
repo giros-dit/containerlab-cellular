@@ -37,8 +37,8 @@ RUN apt install -y sudo nano bash net-tools ldnsutils iputils-ping traceroute ip
     openssh-server tcpdump unzip subversion git curl wget gnupg
 
 # Install MongoDB and Open5GS's open5gs-dbctl tool.
-RUN wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | apt-key add -
-RUN echo "deb [arch=amd64,arm64] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+RUN curl -fsSL https://pgp.mongodb.com/server-8.0.asc | gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg --dearmor
+RUN echo "deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/8.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-8.0.list
 RUN apt update && apt install -y mongodb-org
 RUN wget https://raw.githubusercontent.com/open5gs/open5gs/main/misc/db/open5gs-dbctl && chmod +x open5gs-dbctl
 

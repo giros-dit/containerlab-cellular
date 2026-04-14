@@ -18,7 +18,8 @@ upf:
     server:
       - address: 10.100.1.3
   session:
-    - subnet: 172.45.1.1/24
+    - subnet: 172.45.1.0/24
+      gateway: 172.45.1.1
       dev: ogstun
       dnn: internet
   metrics:
@@ -71,14 +72,16 @@ upf:
 #  $ sudo ip addr add 2001:db8:babe::1/48 dev ogstun3
 #
 #  session:
-#    - subnet: 10.45.0.1/16
+#    - subnet: 10.45.0.0/16
+#      gateway: 10.45.0.1
 #      dnn: internet
-#    - subnet: 2001:db8:cafe::1/48
+#    - subnet: 2001:db8:cafe::/48
 #      dnn: internet
 #      dev: ogstun2
-#    - subnet: 10.46.0.1/16
+#    - subnet: 10.46.0.0/16
+#      gateway: 10.46.0.1
 #      dnn: ims
 #      dev: ogstun3
-#    - subnet: 2001:db8:babe::1/48
+#    - subnet: 2001:db8:babe::/48
 #      dnn: ims
 #      dev: ogstun3
