@@ -67,10 +67,6 @@ In the ![`containerlab`](containerlab) directory there are several subdirectorie
 - A `topologies` subdirectory with _Containerlab_ topology definition files for the scenario.
 - A `scripts` subdirectory with shell scripts for deploying/destroying/interacting with the scenario.
 
-#### Available testbed scenarios
-
-- [5G Standalone (SA) with Open5GS and UERANSIM](containerlab/5g-sa_open5gs_ueransim/).
-
 ### 3.- Capturing traffic with _Wireshark_
 
 This command serves as a template to capture traffic with _Wireshark_ in any container. You just need to replace `<clab-container-name>` with the desired _Containerlab_ container name and `<container-interface>` with the desired network interface inside the container.
@@ -89,3 +85,7 @@ If the above command does not work, you can directly open _Wireshark_, select th
 You can SSH to the containers deployed in any scenario with the following set of credentials:
 - Username: `root` - Password: `gprsumts`.
 - Username: `admin` - Password: `admintelecom`.
+
+### Available testbed scenarios
+
+- [5G Standalone (SA) with Open5GS and UERANSIM](containerlab/5g-sa_open5gs_ueransim/).
