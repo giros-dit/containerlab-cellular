@@ -86,6 +86,6 @@ You can SSH to the containers deployed in any scenario with the following set of
 - Username: `root` - Password: `gprsumts`.
 - Username: `admin` - Password: `admintelecom`.
 
-### Available testbed scenarios
+## Available testbed scenarios
 
 - [5G Standalone (SA) with Open5GS and UERANSIM](containerlab/5g-sa_open5gs_ueransim/).
